@@ -1,16 +1,6 @@
-# medisync
+# MediSync
 
-A new Flutter project.
+MediSync revolutionizes healthcare accessibility by connecting users seamlessly with a network of trusted doctors. Book appointments effortlessly, explore multiple specialties, and manage your health with ease—all in one intuitive platform.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🎨 System Design
+<img width="715" alt="Screenshot 2024-07-03 at 1 13 23 AM" src="https://github.com/MostafaHamed-W/medisync/assets/120649545/c428f670-ee71-42ff-9120-ff8502d896ac">
