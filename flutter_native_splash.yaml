@@ -1,0 +1,7 @@
+flutter_native_splash:
+  # iOS and Android below 12 (API 31 )
+  color: "#ffffff"
+  image: assets/images/medisync_splash.png
+  
+  # Following are specific parameters for Android 12+.
+  android_12:
