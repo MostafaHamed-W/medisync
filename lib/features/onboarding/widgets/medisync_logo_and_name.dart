@@ -18,7 +18,7 @@ class MediSyncLogoAndName extends StatelessWidget {
         SizedBox(width: 10.w),
         Text(
           'MediSync',
-          style: TextStyles.font24Black700Weight,
+          style: TextStyles.font24BlackBold,
         )
       ],
     );
