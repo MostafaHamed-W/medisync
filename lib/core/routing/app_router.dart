@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medisync/core/routing/routes.dart';
-import 'package:medisync/features/login/login_screen.dart';
+import 'package:medisync/features/login/ui/login_screen.dart';
 import 'package:medisync/features/onboarding/onboarding_screen.dart';
 
 class AppRouter {
