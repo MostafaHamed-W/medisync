@@ -13,6 +13,8 @@ class CustomTextField extends StatelessWidget {
   final EdgeInsetsGeometry? contentPadding;
   final InputBorder? focusedBorder;
   final InputBorder? enabledBorder;
+  final TextEditingController? controller;
+  final Function(String?) validator;
 
   const CustomTextField({
     super.key,
@@ -25,11 +27,17 @@ class CustomTextField extends StatelessWidget {
     this.focusedBorder,
     this.enabledBorder,
     required this.hintText,
+    this.controller,
+    required this.validator,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
+      validator: (value) {
+        return validator(value);
+      },
       onTapOutside: (event) => FocusManager.instance.primaryFocus?.unfocus(),
       style: style ?? TextStyles.font14DarkBlueMeduim,
       obscureText: isObscureText ?? false,
@@ -51,6 +59,20 @@ class CustomTextField extends StatelessWidget {
               borderSide: const BorderSide(color: ColorsManager.lighterGray),
               borderRadius: BorderRadius.circular(16),
             ),
+        errorBorder: OutlineInputBorder(
+          borderSide: const BorderSide(
+            color: Colors.red,
+            width: 1.3,
+          ),
+          borderRadius: BorderRadius.circular(16.0),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderSide: const BorderSide(
+            color: Colors.red,
+            width: 1.3,
+          ),
+          borderRadius: BorderRadius.circular(16.0),
+        ),
       ),
     );
   }
