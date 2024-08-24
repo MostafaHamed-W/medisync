@@ -9,13 +9,16 @@ class PasswordValidation extends StatelessWidget {
   final bool hasSpecialCharacter;
   final bool hasNumber;
   final bool hasMinLenght;
+  final bool? isPasswordIdentical;
   const PasswordValidation(
       {super.key,
       required this.hasLowerCase,
       required this.hasUpperCase,
       required this.hasSpecialCharacter,
       required this.hasNumber,
-      required this.hasMinLenght});
+    required this.hasMinLenght,
+    this.isPasswordIdentical,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +34,9 @@ class PasswordValidation extends StatelessWidget {
         verticalHight(2),
         buildValidtionRow('At least 8 characters long', hasMinLenght),
         verticalHight(2),
+        isPasswordIdentical != null
+            ? buildValidtionRow('Password confirmation should match', isPasswordIdentical!)
+            : const SizedBox.shrink()
       ],
     );
   }

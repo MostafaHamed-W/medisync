@@ -73,9 +73,9 @@ class TextStyles {
     color: Colors.black,
   );
 
-  static TextStyle font11BlueRegular = TextStyle(
-    fontSize: 11.sp,
-    fontWeight: FontWeightHelper.regular,
+  static TextStyle font13BlueSemiBlod = TextStyle(
+    fontSize: 13.sp,
+    fontWeight: FontWeightHelper.semiBold,
     color: ColorsManager.mainBlue,
   );
 
