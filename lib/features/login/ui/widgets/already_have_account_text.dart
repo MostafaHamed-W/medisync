@@ -1,8 +1,10 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:medisync/core/routing/routes.dart';
 import 'package:medisync/core/theming/styles.dart';
 
-class AlreadyHaveAccountText extends StatelessWidget {
-  const AlreadyHaveAccountText({
+class DontHaveAccountText extends StatelessWidget {
+  const DontHaveAccountText({
     super.key,
   });
 
@@ -11,15 +13,25 @@ class AlreadyHaveAccountText extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(
+        RichText(
           textAlign: TextAlign.center,
-          'Already have an account yet?\t',
-          style: TextStyles.font11BlackRegular,
+          text: TextSpan(
+            children: [
+              TextSpan(
+                text: 'Don\'t have an account yet?\t',
+                style: TextStyles.font13DarkBlueRegular,
+              ),
+              TextSpan(
+                text: 'Sign Up',
+                style: TextStyles.font13BlueSemiBlod,
+                recognizer: TapGestureRecognizer()
+                  ..onTap = () {
+                    Navigator.pushNamed(context, Routes.signUpScreen);
+                  },
+              ),
+            ],
+          ),
         ),
-        Text(
-          'Sign Up',
-          style: TextStyles.font11BlueRegular,
-        )
       ],
     );
   }

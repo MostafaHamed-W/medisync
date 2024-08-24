@@ -3,6 +3,7 @@ class ApiConstants {
 
   // Login endPoints
   static const login = "/auth/login";
+  static const signup = "/auth/register";
 }
 
 class ApiErrors {
