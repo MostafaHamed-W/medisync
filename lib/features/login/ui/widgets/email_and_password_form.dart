@@ -6,14 +6,14 @@ import 'package:medisync/core/widgets/custom_text_field.dart';
 import 'package:medisync/features/login/logic/cubit/login_cubit.dart';
 import 'package:medisync/features/login/ui/widgets/password_validation.dart';
 
-class EmailAndPassword extends StatefulWidget {
-  const EmailAndPassword({super.key});
+class EmailAndPasswordForm extends StatefulWidget {
+  const EmailAndPasswordForm({super.key});
 
   @override
-  State<EmailAndPassword> createState() => _EmailAndPasswordState();
+  State<EmailAndPasswordForm> createState() => _EmailAndPasswordFormState();
 }
 
-class _EmailAndPasswordState extends State<EmailAndPassword> {
+class _EmailAndPasswordFormState extends State<EmailAndPasswordForm> {
   bool isObsucured = true;
   late TextEditingController passwordController;
   bool hasLowerCase = false;
