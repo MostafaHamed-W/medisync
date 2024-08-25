@@ -51,6 +51,22 @@ android {
             signingConfig = signingConfigs.debug
         }
     }
+    
+    flavorDimensions "default"
+    productFlavors {
+        development {
+            dimension "default"
+            resValue "string", "app_name", "MediSync Development"
+            applicationIdSuffix ".dev"
+        }
+
+           production {
+            dimension "default"
+            resValue "string", "app_name", "MediSync Production"
+        }
+    }
+
+    
 }
 
 flutter {
