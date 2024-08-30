@@ -12,4 +12,6 @@ class ColorsManager {
   static const semiDarkGray = Color(0xFF616161);
   static const moreLighterGray = Color(0xFFF5F5F5);
   static const red = Color(0xFFFF4C5E);
+  static const defaultGray = Color(0xFFF4F8FF);
+  static const gold = Color(0xFFFFD600);
 }
