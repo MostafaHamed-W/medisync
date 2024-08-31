@@ -15,7 +15,7 @@ class HomeTopBar extends StatelessWidget {
           children: [
             Text(
               'Hi, Mostafa!',
-              style: TextStyles.font18DarkBlueBold,
+              style: TextStyles.font19DarkBlueBold,
             ),
             Text(
               "How Are you Today?",
