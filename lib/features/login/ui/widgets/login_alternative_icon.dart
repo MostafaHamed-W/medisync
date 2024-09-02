@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:medisync/core/theming/colors.dart';
 
 class LoginAlternativeIcon extends StatelessWidget {
   const LoginAlternativeIcon({
@@ -14,7 +15,7 @@ class LoginAlternativeIcon extends StatelessWidget {
       width: 46,
       height: 46,
       child: CircleAvatar(
-        backgroundColor: const Color(0xFFF5F5F5),
+        backgroundColor: ColorsManager.moreLighterGray,
         child: Padding(
           padding: EdgeInsets.all(5.w),
           child: Image.asset(image),

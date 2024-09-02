@@ -9,4 +9,7 @@ class ColorsManager {
   static const moreLightGray = Color(0xFFFDFDFF);
   static const checkBoxBorder = Color(0xffA9B2B9);
   static const blackGray = Color(0xFF9E9E9E);
+  static const semiDarkGray = Color(0xFF616161);
+  static const moreLighterGray = Color(0xFFF5F5F5);
+  static const red = Color(0xFFFF4C5E);
 }
