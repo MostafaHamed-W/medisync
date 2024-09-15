@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:medisync/core/helpers/debug_painter.dart';
+import 'package:medisync/core/helpers/spacing.dart';
+import 'package:medisync/features/home/ui/widgets/doctor_card.dart';
+import 'package:medisync/features/home/ui/widgets/doctor_speciality_listview.dart';
+import 'package:medisync/features/home/ui/widgets/doctor_speciality_see_all.dart';
+import 'package:medisync/features/home/ui/widgets/doctors_listview.dart';
 import 'package:medisync/features/home/ui/widgets/home_top_bar.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -17,10 +23,18 @@ class HomeScreen extends StatelessWidget {
             28.0,
           ),
           width: double.infinity,
-          child: const Column(
+          child: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              HomeTopBar(),
+              const HomeTopBar(),
+              const DoctorCard(),
+              verticalHight(24),
+              const DoctorSpecialitySeeAll(),
+              verticalHight(16),
+              const DoctorsSpecialityListView(),
+              verticalHight(10),
+              const DoctorsListView(),
+
             ],
           ),
         ),
