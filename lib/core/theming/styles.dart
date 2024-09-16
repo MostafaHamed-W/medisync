@@ -27,6 +27,11 @@ class TextStyles {
     fontWeight: FontWeightHelper.regular,
     color: ColorsManager.gray,
   );
+  static TextStyle font12GrayMeduim = TextStyle(
+    fontSize: 12.sp,
+    fontWeight: FontWeightHelper.meduim,
+    color: ColorsManager.gray,
+  );
 
   static TextStyle font14GrayRegular = TextStyle(
     fontSize: 14.sp,
@@ -38,6 +43,12 @@ class TextStyles {
     fontWeight: FontWeightHelper.regular,
     color: ColorsManager.mainBlue,
   );
+  static TextStyle font14BlueRegular = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: ColorsManager.mainBlue,
+  );
+
   static TextStyle font14LightGrayMeduim = TextStyle(
     fontSize: 14.sp,
     fontWeight: FontWeightHelper.meduim,
@@ -85,6 +96,11 @@ class TextStyles {
     color: Colors.black,
   );
 
+  static TextStyle font12DarkBlueRegular = TextStyle(
+    fontSize: 12.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: ColorsManager.darkBlue,
+  );
   static TextStyle font14DarkBlueMeduim = TextStyle(
     fontSize: 14.sp,
     fontWeight: FontWeightHelper.meduim,
@@ -94,6 +110,12 @@ class TextStyles {
   static TextStyle font15DarkBlueMedium = TextStyle(
     fontSize: 15.sp,
     fontWeight: FontWeightHelper.meduim,
+    color: ColorsManager.darkBlue,
+  );
+
+  static TextStyle font16DarkBlueBold = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: FontWeightHelper.bold,
     color: ColorsManager.darkBlue,
   );
 
@@ -107,10 +129,47 @@ class TextStyles {
     fontWeight: FontWeightHelper.semiBold,
     color: ColorsManager.mainBlue,
   );
+  
+
+  static TextStyle font12SemiDarkGrayRegular = TextStyle(
+    fontSize: 12.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: ColorsManager.semiDarkGray,
+  );
+
+  static TextStyle font11SemiDarkGrayRegular = TextStyle(
+    fontSize: 11.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: ColorsManager.semiDarkGray,
+  );
 
   static TextStyle font16WhiteSemiBold = TextStyle(
     fontSize: 16.sp,
     fontWeight: FontWeightHelper.semiBold,
     color: Colors.white,
+  );
+
+  static TextStyle font18WhiteMeduim = TextStyle(
+    fontSize: 18.sp,
+    fontWeight: FontWeightHelper.meduim,
+    color: Colors.white,
+  );
+
+  static TextStyle font20WhiteMeduim = TextStyle(
+    fontSize: 20.sp,
+    fontWeight: FontWeightHelper.meduim,
+    color: Colors.white,
+  );
+
+  static TextStyle font19DarkBlueBold = TextStyle(
+    fontSize: 19.sp,
+    fontWeight: FontWeightHelper.bold,
+    color: ColorsManager.darkBlue,
+  );
+
+  static TextStyle font18DarkBlueBold = TextStyle(
+    fontSize: 18.sp,
+    fontWeight: FontWeightHelper.semiBold,
+    color: ColorsManager.darkBlue,
   );
 }
