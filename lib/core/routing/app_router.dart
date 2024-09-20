@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:medisync/core/di/dependency_injection.dart';
 import 'package:medisync/core/routing/routes.dart';
+import 'package:medisync/features/home/logic/home_cubit.dart';
 import 'package:medisync/features/home/ui/home_screen.dart';
 import 'package:medisync/features/login/logic/cubit/login_cubit.dart';
-import 'package:medisync/features/login/ui/login_screen.dart';  
+import 'package:medisync/features/login/ui/login_screen.dart';
+import 'package:medisync/features/onboarding/onboarding_screen.dart';
 import 'package:medisync/features/signup/logic/cubit/signup_cubit.dart';
 import 'package:medisync/features/signup/ui/sign_up_screen.dart';
 
@@ -16,7 +18,7 @@ class AppRouter {
     switch (settings.name) {
       case Routes.onBoardingScreen:
         return MaterialPageRoute(
-          builder: (_) => const HomeScreen(),
+          builder: (_) => const OnboardingScreen(),
           // const OnboardingScreen(),
         );
       case Routes.loginScreen:
@@ -28,7 +30,10 @@ class AppRouter {
         );
       case Routes.homeScreen:
         return MaterialPageRoute(
-          builder: (_) => const HomeScreen(),
+          builder: (_) => BlocProvider(
+            create: (context) => HomeCubit(getIt())..getSpecializations(),
+            child: const HomeScreen(),
+          ),
         );
       case Routes.signUpScreen:
         return MaterialPageRoute(

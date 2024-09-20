@@ -23,7 +23,7 @@ class MediSync extends StatelessWidget {
         ),
         onGenerateRoute: appRouter.generateRoute,
         debugShowCheckedModeBanner: false,
-        initialRoute: Routes.onBoardingScreen,
+        initialRoute: Routes.homeScreen,
       ),
     );
   }
