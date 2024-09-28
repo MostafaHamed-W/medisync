@@ -3,11 +3,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:medisync/core/helpers/spacing.dart';
 import 'package:medisync/core/theming/colors.dart';
 import 'package:medisync/core/theming/styles.dart';
+import 'package:medisync/features/home/data/models/specialization_response_model.dart';
 
 class DoctorListViewItem extends StatelessWidget {
   const DoctorListViewItem({
     super.key,
+    required this.doctor,
   });
+
+  final Doctors doctor;
 
   @override
   Widget build(BuildContext context) {
@@ -30,13 +34,13 @@ class DoctorListViewItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Dr. Randy Wigham",
+                  doctor.name ?? "",
                   style: TextStyles.font16DarkBlueBold,
                   overflow: TextOverflow.ellipsis,
                 ),
                 verticalHight(8),
                 Text(
-                  "General  |  RSUD Gatot Subroto",
+                  "${doctor.degree} |  RSUD Gatot Subroto",
                   style: TextStyles.font12GrayMeduim,
                 ),
                 verticalHight(8),

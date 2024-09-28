@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:medisync/features/home/data/models/specialization_response_model.dart';
 import 'package:medisync/features/home/ui/widgets/doctor_listview_item.dart';
 
 class DoctorsListView extends StatelessWidget {
-  const DoctorsListView({super.key});
+  const DoctorsListView({super.key, required this.doctors});
+  final List<Doctors> doctors;
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: ListView.builder(
-        itemCount: 8,
+        itemCount: doctors.length,
         itemBuilder: (BuildContext context, int index) {
-          return const DoctorListViewItem();
+          return DoctorListViewItem(
+            doctor: doctors[index],
+          );
         },
       ),
     );
