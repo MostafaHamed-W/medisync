@@ -4,6 +4,7 @@ import 'package:medisync/core/routing/app_router.dart';
 import 'package:medisync/medisync.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   setupGetIt();
   runApp(
     MediSync(
