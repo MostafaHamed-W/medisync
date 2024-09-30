@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:medisync/core/routing/app_router.dart';
 import 'package:medisync/core/routing/routes.dart';
@@ -10,6 +11,7 @@ class MediSync extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // debugPaintSizeEnabled = true;
     return ScreenUtilInit(
       designSize: const Size(375, 812),
       minTextAdapt: true,
@@ -21,7 +23,7 @@ class MediSync extends StatelessWidget {
         ),
         onGenerateRoute: appRouter.generateRoute,
         debugShowCheckedModeBanner: false,
-        initialRoute: Routes.onBoardingScreen,
+        initialRoute: Routes.homeScreen,
       ),
     );
   }
