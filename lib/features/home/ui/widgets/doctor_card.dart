@@ -23,7 +23,7 @@ class DoctorCard extends StatelessWidget {
               ),
             ),
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 15.h),
+              padding: EdgeInsets.only(right: 15.w, left: 15.w, top: 15.h),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
