@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:medisync/core/helpers/constants.dart';
 import 'package:medisync/core/routing/app_router.dart';
 import 'package:medisync/core/routing/routes.dart';
 import 'package:medisync/core/theming/colors.dart';
@@ -23,7 +24,7 @@ class MediSync extends StatelessWidget {
         ),
         onGenerateRoute: appRouter.generateRoute,
         debugShowCheckedModeBanner: false,
-        initialRoute: Routes.homeScreen,
+        initialRoute: isLoggedInUser ? Routes.homeScreen : Routes.loginScreen,
       ),
     );
   }
