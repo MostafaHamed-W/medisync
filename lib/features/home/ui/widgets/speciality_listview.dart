@@ -6,22 +6,38 @@ import 'package:medisync/core/theming/colors.dart';
 import 'package:medisync/core/theming/styles.dart';
 import 'package:medisync/features/home/data/models/specialization_response_model.dart';
 
-class DoctorsSpecialityListView extends StatelessWidget {
-  const DoctorsSpecialityListView({super.key, required this.specializationDataList});
+class SpecialityListView extends StatefulWidget {
+  const SpecialityListView({super.key, required this.specializationDataList});
 
   final List<SpecializationData?>? specializationDataList;
 
   @override
+  State<SpecialityListView> createState() => _SpecialityListViewState();
+}
+
+class _SpecialityListViewState extends State<SpecialityListView> {
+  int selectedIndex = 0;
+  @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 100.h,
+      height: 120.h,
       // color: Colors.red,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: specializationDataList?.length,
+        itemCount: widget.specializationDataList?.length,
         itemBuilder: (BuildContext context, int index) {
-          return DoctorsSpecialityListViewItem(
-              specializationDataList: specializationDataList?[index], itemIndex: index);
+          return GestureDetector(
+            onTap: () {
+              setState(() {
+                selectedIndex = index;
+              });
+            },
+            child: DoctorsSpecialityListViewItem(
+              specializationDataList: widget.specializationDataList?[index],
+              itemIndex: index,
+              selectedIndex: selectedIndex,
+            ),
+          );
         },
       ),
     );
@@ -33,10 +49,12 @@ class DoctorsSpecialityListViewItem extends StatelessWidget {
     super.key,
     required this.specializationDataList,
     required this.itemIndex,
+    required this.selectedIndex,
   });
 
   final SpecializationData? specializationDataList;
   final int itemIndex;
+  final int selectedIndex;
 
   @override
   Widget build(BuildContext context) {
@@ -45,12 +63,16 @@ class DoctorsSpecialityListViewItem extends StatelessWidget {
       child: Column(
         children: [
           CircleAvatar(
-            radius: 35.h,
-            backgroundColor: ColorsManager.defaultGray,
-            child: SvgPicture.asset(
-              "assets/svgs/general_speciality.svg",
-              height: 40,
-              width: 40,
+            radius: 37.h,
+            backgroundColor: selectedIndex == itemIndex ? ColorsManager.darkBlue : Colors.transparent,
+            child: CircleAvatar(
+              radius: 35.h,
+              backgroundColor: ColorsManager.defaultGray,
+              child: SvgPicture.asset(
+                "assets/svgs/general_speciality.svg",
+                height: 40,
+                width: 40,
+              ),
             ),
           ),
           verticalHight(10),
