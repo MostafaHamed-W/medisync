@@ -11,7 +11,7 @@ class SignupRepo {
   Future<ApiResult<SignupResponse>> signup(SignupRequestBody signupRequestBody) async {
     try {
       final response = await _apiService.signup(signupRequestBody);
-      return ApiResult.sucess(response);
+      return ApiResult.success(response);
     } catch (e) {
       return ApiResult.failure(ErrorHandler.handle(e));
     }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medisync/core/helpers/spacing.dart';
-import 'package:medisync/features/home/ui/doctors_listview_bloc_builder.dart';
-import 'package:medisync/features/home/ui/speciality_listview_bloc_builder.dart';
+import 'package:medisync/features/home/ui/widgets/specializations_list/speciality_listview_bloc_builder.dart';
+import 'package:medisync/features/home/ui/widgets/doctors_list/doctors_listview_bloc_builder.dart';
 import 'package:medisync/features/home/ui/widgets/doctor_card.dart';
 import 'package:medisync/features/home/ui/widgets/speciality_see_all.dart';
 import 'package:medisync/features/home/ui/widgets/home_top_bar.dart';

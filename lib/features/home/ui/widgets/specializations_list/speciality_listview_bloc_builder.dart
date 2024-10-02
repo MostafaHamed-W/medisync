@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:medisync/features/home/data/models/specialization_response_model.dart';
 import 'package:medisync/features/home/logic/home_cubit.dart';
 import 'package:medisync/features/home/logic/home_state.dart';
-import 'package:medisync/features/home/ui/widgets/speciality_listview.dart';
+import 'package:medisync/features/home/ui/widgets/specializations_list/speciality_listview.dart';
 
 class SpecialityListViewBlocBuilder extends StatelessWidget {
   const SpecialityListViewBlocBuilder({super.key});

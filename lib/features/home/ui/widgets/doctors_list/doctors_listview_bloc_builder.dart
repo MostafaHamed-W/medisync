@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:medisync/features/home/data/models/specialization_response_model.dart';
 import 'package:medisync/features/home/logic/home_cubit.dart';
 import 'package:medisync/features/home/logic/home_state.dart';
-import 'package:medisync/features/home/ui/widgets/doctors_listview.dart';
+import 'package:medisync/features/home/ui/widgets/doctors_list/doctors_listview.dart';
 
 class DoctorsListViewBlocBuilder extends StatelessWidget {
   const DoctorsListViewBlocBuilder({
@@ -13,8 +13,7 @@ class DoctorsListViewBlocBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<HomeCubit, HomeState>(
-      buildWhen: (previous, current) =>
-          current is SpecializationsLoading || current is SpecializationsSuccess || current is SpecializationsError,
+      buildWhen: (previous, current) => current is DoctorsFailure || current is DoctorsSuccess,
       builder: (context, state) {
         return state.maybeWhen(
           specializationsLoading: () => setUpLoading(),
@@ -23,6 +22,10 @@ class DoctorsListViewBlocBuilder extends StatelessWidget {
             return setUpSuccess(specializationsList);
           },
           specializationsFailure: (errorHandler) => setUpError(),
+          doctorsSuccess: (specializationsListData) {
+            final specializationsList = specializationsListData;
+            return DoctorsListView(doctors: specializationsList ?? []);
+          },
           orElse: () => const SizedBox.shrink(),
         );
       },

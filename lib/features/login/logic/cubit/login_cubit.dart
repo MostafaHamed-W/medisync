@@ -23,7 +23,7 @@ class LoginCubit extends Cubit<LoginState> {
         password: loginPasswordController.text,
       ),
     );
-    response.when(sucess: (loginRequestBody) async {
+    response.when(success: (loginRequestBody) async {
       await saveUserToken(loginRequestBody.userData?.token ?? "");
       emit(LoginState.sucess(response));
     }, failure: (error) {

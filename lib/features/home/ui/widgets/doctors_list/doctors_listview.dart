@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medisync/features/home/data/models/specialization_response_model.dart';
-import 'package:medisync/features/home/ui/widgets/doctor_listview_item.dart';
+import 'package:medisync/features/home/ui/widgets/doctors_list/doctor_listview_item.dart';
 
 class DoctorsListView extends StatelessWidget {
   const DoctorsListView({super.key, required this.doctors});
