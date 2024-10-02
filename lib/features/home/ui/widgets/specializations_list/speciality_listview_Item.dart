@@ -24,23 +24,33 @@ class SpecialityListViewItem extends StatelessWidget {
       padding: EdgeInsetsDirectional.only(start: itemIndex == 0 ? 0 : 16.w),
       child: Column(
         children: [
-          CircleAvatar(
-            radius: 37.h,
-            backgroundColor: selectedIndex == itemIndex ? ColorsManager.darkBlue : Colors.transparent,
-            child: CircleAvatar(
-              radius: 35.h,
-              backgroundColor: ColorsManager.defaultGray,
-              child: SvgPicture.asset(
-                "assets/svgs/general_speciality.svg",
-                height: 40,
-                width: 40,
-              ),
-            ),
-          ),
+          selectedIndex == itemIndex
+              ? CircleAvatar(
+                  radius: 40.h,
+                  backgroundColor: ColorsManager.darkBlue,
+                  child: CircleAvatar(
+                    radius: 37.h,
+                    backgroundColor: ColorsManager.defaultGray,
+                    child: SvgPicture.asset(
+                      "assets/svgs/general_speciality.svg",
+                      height: 40,
+                      width: 40,
+                    ),
+                  ),
+                )
+              : CircleAvatar(
+                  radius: 35.h,
+                  backgroundColor: ColorsManager.defaultGray,
+                  child: SvgPicture.asset(
+                    "assets/svgs/general_speciality.svg",
+                    height: 40,
+                    width: 40,
+                  ),
+                ),
           verticalHight(10),
           Text(
             specializationDataList?.name ?? "UnKnown",
-            style: TextStyles.font12DarkBlueRegular,
+            style: selectedIndex == itemIndex ? TextStyles.font12DarkBlueBold : TextStyles.font12DarkBlueRegular,
           )
         ],
       ),
