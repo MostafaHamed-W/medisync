@@ -4,6 +4,7 @@ import 'package:medisync/features/home/data/models/specialization_response_model
 import 'package:medisync/features/home/logic/home_cubit.dart';
 import 'package:medisync/features/home/logic/home_state.dart';
 import 'package:medisync/features/home/ui/widgets/specializations_list/speciality_listview.dart';
+import 'package:medisync/features/home/ui/widgets/specializations_list/speciality_shimmer_loading.dart';
 
 class SpecialityListViewBlocBuilder extends StatelessWidget {
   const SpecialityListViewBlocBuilder({super.key});
@@ -36,11 +37,6 @@ class SpecialityListViewBlocBuilder extends StatelessWidget {
   }
 
   Widget setUpLoading() {
-    return const SizedBox(
-      height: 100,
-      child: Center(
-        child: CircularProgressIndicator(),
-      ),
-    );
+    return const SpecialityShimmerLoading();
   }
 }
