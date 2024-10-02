@@ -26,7 +26,7 @@ class SignupCubit extends Cubit<SignupState> {
       gender: 0,
     ));
     response.when(
-      sucess: (signupResponse) {
+      success: (signupResponse) {
         emit(SignupState.success(signupResponse));
       },
       failure: (error) {

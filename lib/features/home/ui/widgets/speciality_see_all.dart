@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:medisync/core/theming/styles.dart';
 
-class DoctorSpecialitySeeAll extends StatelessWidget {
-  const DoctorSpecialitySeeAll({super.key});
+class SpecialitySeeAll extends StatelessWidget {
+  const SpecialitySeeAll({super.key});
 
   @override
   Widget build(BuildContext context) {

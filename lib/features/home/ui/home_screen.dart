@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:medisync/core/helpers/spacing.dart';
+import 'package:medisync/features/home/ui/widgets/specializations_list/speciality_listview_bloc_builder.dart';
+import 'package:medisync/features/home/ui/widgets/doctors_list/doctors_listview_bloc_builder.dart';
 import 'package:medisync/features/home/ui/widgets/doctor_card.dart';
-import 'package:medisync/features/home/ui/widgets/specializations_and_doctors_bloc_builder.dart';
-import 'package:medisync/features/home/ui/widgets/doctor_speciality_see_all.dart';
+import 'package:medisync/features/home/ui/widgets/speciality_see_all.dart';
 import 'package:medisync/features/home/ui/widgets/home_top_bar.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -27,9 +28,12 @@ class HomeScreen extends StatelessWidget {
               const HomeTopBar(),
               const DoctorCard(),
               verticalHight(24),
-              const DoctorSpecialitySeeAll(),
+              const SpecialitySeeAll(),
               verticalHight(16),
-              const SpecializationsAndDoctorsBlocBuilder(),
+              const SpecialityListViewBlocBuilder(),
+              verticalHight(10),
+              const DoctorsListViewBlocBuilder(),
+              // const SpecializationsAndDoctorsBlocBuilder(),
             ],
           ),
         ),
