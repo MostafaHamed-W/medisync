@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:medisync/core/helpers/constants.dart';
 import 'package:medisync/core/routing/app_router.dart';

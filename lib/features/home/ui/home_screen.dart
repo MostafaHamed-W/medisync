@@ -15,12 +15,7 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Container(
-          margin: const EdgeInsets.fromLTRB(
-            20.0,
-            16.0,
-            20.0,
-            28.0,
-          ),
+          margin: const EdgeInsets.fromLTRB(20.0, 16.0, 20.0, 28.0),
           width: double.infinity,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
@@ -41,5 +36,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
-

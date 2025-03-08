@@ -17,10 +17,7 @@ class SpecialityListViewBlocBuilder extends StatelessWidget {
       builder: (context, state) {
         return state.maybeWhen(
           specializationsLoading: () => setUpLoading(),
-          specializationsSuccess: (specializationsListData) {
-            final specializationsList = specializationsListData;
-            return setUpSuccess(specializationsList);
-          },
+          specializationsSuccess: (specializationsListData) => setUpSuccess(specializationsListData),
           specializationsFailure: (errorHandler) => setUpError(),
           orElse: () => const SizedBox.shrink(),
         );
@@ -28,14 +25,18 @@ class SpecialityListViewBlocBuilder extends StatelessWidget {
     );
   }
 
-  SizedBox setUpError() => const SizedBox.shrink();
-
-  Widget setUpSuccess(List<SpecializationData?>? specializationsList) {
+  // Define success body of speciality list view
+  Widget setUpSuccess(List<SpecializationData?>? specializationsListData) {
+    final specializationsList = specializationsListData;
     return SpecialityListView(
       specializationDataList: specializationsList,
     );
   }
 
+  // Define erroer handler with custom error widget
+  SizedBox setUpError() => const SizedBox.shrink();
+
+  // Define loading handler with custom loading widget
   Widget setUpLoading() {
     return const SpecialityShimmerLoading();
   }
