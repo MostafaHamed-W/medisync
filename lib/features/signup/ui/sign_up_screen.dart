@@ -46,8 +46,10 @@ class SignupScreen extends StatelessWidget {
                         buttonTextStyle: TextStyles.font16WhiteSemiBold,
                         onPressed: () {
                           validateThenDoSignup(context);
-                        }),
-                    const SignupBlocListener()
+                      },
+                    ),
+                    const SignupBlocListener(),
+                    verticalHight(30),
                   ],
                 )
               ],

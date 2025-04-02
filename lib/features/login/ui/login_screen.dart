@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:medisync/core/helpers/spacing.dart';
 import 'package:medisync/core/theming/styles.dart';
+import 'package:medisync/core/widgets/custom_text_button.dart';
 import 'package:medisync/features/login/logic/cubit/login_cubit.dart';
 import 'package:medisync/features/login/ui/widgets/already_have_account_text.dart';
 import 'package:medisync/features/login/ui/widgets/email_and_password_form.dart';
@@ -50,6 +51,13 @@ class _LoginScreenState extends State<LoginScreen> {
                     const TermsAndContidionsText(),
                     verticalHight(20),
                     const DontHaveAccountText(),
+                    verticalHight(20),
+                    CustomTextButton(
+                        buttonText: "Login",
+                        buttonTextStyle: TextStyles.font16WhiteSemiBold,
+                        onPressed: () {
+                          validateThenDoLogin(context);
+                        }),
                     const LoginBlocListener()
                   ],
                 )
