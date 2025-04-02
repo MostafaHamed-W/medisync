@@ -1,3 +1,4 @@
+import 'package:chucker_flutter/chucker_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:medisync/core/helpers/constants.dart';
@@ -16,6 +17,7 @@ class MediSync extends StatelessWidget {
       designSize: const Size(375, 812),
       minTextAdapt: true,
       child: MaterialApp(
+        navigatorObservers: [ChuckerFlutter.navigatorObserver],
         title: 'MediSync',
         theme: ThemeData(
           primaryColor: ColorsManager.mainBlue,

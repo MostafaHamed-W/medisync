@@ -1,7 +1,7 @@
+import 'package:chucker_flutter/chucker_flutter.dart';
 import 'package:dio/dio.dart';
 import 'package:medisync/core/helpers/constants.dart';
 import 'package:medisync/core/helpers/shared_preferences_helper.dart';
-import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 class DioFactory {
   /// private constructor as I don't want to allow creating an instance of this class
@@ -39,12 +39,13 @@ class DioFactory {
   }
 
   static void addDioInterceptor() {
-    dio?.interceptors.add(
-      PrettyDioLogger(
-        requestBody: true,
-        requestHeader: true,
-        responseHeader: true,
-      ),
-    );
+    dio?.interceptors.add(ChuckerDioInterceptor());
+    // dio?.interceptors.add(
+    //   PrettyDioLogger(
+    //     requestBody: true,
+    //     requestHeader: true,
+    //     responseHeader: true,
+    //   ),
+    // );
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:medisync/core/helpers/extensions.dart';
+import 'package:medisync/core/networking/api_error_model.dart';
 import 'package:medisync/core/routing/routes.dart';
 import 'package:medisync/core/theming/colors.dart';
 import 'package:medisync/core/theming/styles.dart';
@@ -71,7 +72,7 @@ class SignupBlocListener extends StatelessWidget {
     );
   }
 
-  void setupErrorState(BuildContext context, String error) {
+  void setupErrorState(BuildContext context, ApiErrorModel apiErrorModel) {
     context.pop();
     showDialog(
       context: context,
@@ -82,7 +83,7 @@ class SignupBlocListener extends StatelessWidget {
           size: 32,
         ),
         content: Text(
-          error,
+          apiErrorModel.getAllErrorMessages(),
           style: TextStyles.font15DarkBlueMedium,
         ),
         actions: [

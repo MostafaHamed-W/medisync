@@ -1,5 +1,4 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:medisync/core/networking/api_error_handler.dart';
 import 'package:medisync/features/home/data/models/specialization_response_model.dart';
 import 'package:medisync/features/home/data/repos/home_repo.dart';
 import 'package:medisync/features/home/logic/home_state.dart';
@@ -20,7 +19,7 @@ class HomeCubit extends Cubit<HomeState> {
         getDoctorsList(specializationList?[2]?.id);
         emit(HomeState.specializationsSuccess(specializationsRespnse.specializationDataList ?? []));
       },
-      failure: (errorHandler) => emit(HomeState.specializationsFailure(errorHandler)),
+      failure: (apiErrorModel) => emit(HomeState.specializationsFailure(apiErrorModel)),
     );
   }
 
@@ -31,7 +30,7 @@ class HomeCubit extends Cubit<HomeState> {
   void getDoctorsList(int? specializationID) {
     List<Doctors>? doctorsList = getSpecializationByID(specializationID);
     if (doctorsList == null || doctorsList.isEmpty) {
-      emit(HomeState.doctorsFailure(ErrorHandler.handle("No Doctors Found")));
+      emit(const HomeState.doctorsFailure());
     } else {
       emit(HomeState.doctorsSuccess(doctorsList));
     }

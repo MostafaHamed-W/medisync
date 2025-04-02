@@ -1,6 +1,9 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:medisync/core/helpers/extensions.dart';
+import 'package:medisync/core/networking/api_error_model.dart';
 import 'package:medisync/core/routing/routes.dart';
 import 'package:medisync/core/theming/styles.dart';
 import 'package:medisync/features/login/logic/cubit/login_cubit.dart';
@@ -23,9 +26,9 @@ class LoginBlocListener extends StatelessWidget {
               ),
             ),
           ),
-          failure: (error) {
+          failure: (apiErrorModel) {
             context.pop();
-            setupErrorState(context, error);
+            setupErrorState(context, apiErrorModel);
           },
           sucess: (loginResponse) {
             context.pop();
@@ -37,7 +40,7 @@ class LoginBlocListener extends StatelessWidget {
     );
   }
 
-  Future<dynamic> setupErrorState(BuildContext context, String error) {
+  Future<dynamic> setupErrorState(BuildContext context, ApiErrorModel apiErrorModel) {
     return showDialog(
       context: context,
       builder: (context) => AlertDialog(
@@ -47,7 +50,7 @@ class LoginBlocListener extends StatelessWidget {
           size: 32,
         ),
         content: Text(
-          error,
+          apiErrorModel.getAllErrorMessages(),
           style: TextStyles.font15DarkBlueMedium,
         ),
         actions: [
